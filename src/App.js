@@ -16,7 +16,7 @@ class App extends React.Component {
         let th = this;
         return (
             <div>
-            <input type="text" onChange={th.update.bind(th)} />
+                <Widget update={th.update.bind(th)} />
                 <h1>Hello World</h1>
                 <b>{this.props.txt}</b>
                 <h2>{this.state.txt}</h2>
@@ -24,6 +24,9 @@ class App extends React.Component {
         )
     }
 }
+
+const Widget = (props) =>
+    <input type="text" onChange={props.update} />
 
 App.propTypes = {
     txt: React.PropTypes.string.isRequired,
